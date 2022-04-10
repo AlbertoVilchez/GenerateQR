@@ -35,7 +35,12 @@ namespace QR
             this.TextQR = new System.Windows.Forms.TextBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.PanelQR = new System.Windows.Forms.Panel();
+            this.LeerQR = new System.Windows.Forms.Button();
+            this.BoxTraduccion = new System.Windows.Forms.TextBox();
+            this.SubirImagen = new System.Windows.Forms.Button();
+            this.ImagenCarga = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImagenCarga)).BeginInit();
             this.SuspendLayout();
             // 
             // ButtonGenerate
@@ -68,17 +73,61 @@ namespace QR
             // 
             // PanelQR
             // 
+            this.PanelQR.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.PanelQR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PanelQR.Location = new System.Drawing.Point(49, 28);
             this.PanelQR.Name = "PanelQR";
             this.PanelQR.Size = new System.Drawing.Size(324, 295);
             this.PanelQR.TabIndex = 4;
             // 
+            // LeerQR
+            // 
+            this.LeerQR.Location = new System.Drawing.Point(634, 357);
+            this.LeerQR.Name = "LeerQR";
+            this.LeerQR.Size = new System.Drawing.Size(223, 41);
+            this.LeerQR.TabIndex = 6;
+            this.LeerQR.Text = "Traducir";
+            this.LeerQR.UseVisualStyleBackColor = true;
+            this.LeerQR.Click += new System.EventHandler(this.LeerQR_Click);
+            // 
+            // BoxTraduccion
+            // 
+            this.BoxTraduccion.Location = new System.Drawing.Point(580, 417);
+            this.BoxTraduccion.Multiline = true;
+            this.BoxTraduccion.Name = "BoxTraduccion";
+            this.BoxTraduccion.Size = new System.Drawing.Size(324, 123);
+            this.BoxTraduccion.TabIndex = 7;
+            // 
+            // SubirImagen
+            // 
+            this.SubirImagen.Location = new System.Drawing.Point(910, 28);
+            this.SubirImagen.Name = "SubirImagen";
+            this.SubirImagen.Size = new System.Drawing.Size(63, 56);
+            this.SubirImagen.TabIndex = 8;
+            this.SubirImagen.Text = "Cargar";
+            this.SubirImagen.UseVisualStyleBackColor = true;
+            this.SubirImagen.Click += new System.EventHandler(this.SubirImagen_Click);
+            // 
+            // ImagenCarga
+            // 
+            this.ImagenCarga.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ImagenCarga.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ImagenCarga.Location = new System.Drawing.Point(580, 28);
+            this.ImagenCarga.Name = "ImagenCarga";
+            this.ImagenCarga.Size = new System.Drawing.Size(324, 295);
+            this.ImagenCarga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImagenCarga.TabIndex = 9;
+            this.ImagenCarga.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(417, 572);
+            this.ClientSize = new System.Drawing.Size(997, 572);
+            this.Controls.Add(this.ImagenCarga);
+            this.Controls.Add(this.SubirImagen);
+            this.Controls.Add(this.BoxTraduccion);
+            this.Controls.Add(this.LeerQR);
             this.Controls.Add(this.PanelQR);
             this.Controls.Add(this.TextQR);
             this.Controls.Add(this.button2);
@@ -87,6 +136,7 @@ namespace QR
             this.Name = "Form1";
             this.Text = "QRGenerate";
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImagenCarga)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,6 +149,10 @@ namespace QR
         private System.Windows.Forms.TextBox TextQR;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Panel PanelQR;
+        private System.Windows.Forms.Button LeerQR;
+        private System.Windows.Forms.TextBox BoxTraduccion;
+        private System.Windows.Forms.Button SubirImagen;
+        private System.Windows.Forms.PictureBox ImagenCarga;
     }
 }
 

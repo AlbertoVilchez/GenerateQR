@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZXing;
 
 namespace QR
 {
@@ -55,6 +56,39 @@ namespace QR
                 MessageBox.Show("No se ha podido guardar la imagen");
             }
                
+        }
+
+        private void SubirImagen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog getImage = new();
+
+            try
+            {
+                getImage.InitialDirectory = "C:\\";
+                getImage.Filter = "Archivos de Imagen png|*.png";
+
+
+                if (getImage.ShowDialog() == DialogResult.OK)
+                {
+                    ImagenCarga.Image = Image.FromFile(getImage.FileName);
+                   
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al cargar la imagen");
+            }
+
+           
+
+
+        }
+
+        private void LeerQR_Click(object sender, EventArgs e)
+        {
+            BarcodeReader br = new();
+            string textoQR = br.Decode((Bitmap)ImagenCarga.Image).ToString();
+            BoxTraduccion.Text = textoQR;
         }
     }
 }
